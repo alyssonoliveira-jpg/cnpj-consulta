@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { maskCnpj, onlyDigits, isValidCnpjLength, countFilledFields } from './utils/format'
 import { IconSearch, IconSpinner, IconAlert, IconCode, IconCopy, IconCheck } from './components/icons'
 import SummaryCard from './components/SummaryCard'
+import InscricoesTabel from './components/InscricoesTabel'
 import DynamicJsonView from './components/DynamicJsonView'
 
 function App() {
@@ -119,6 +120,9 @@ function App() {
           <div className="space-y-8">
             {/* Summary Card */}
             <SummaryCard data={data} />
+
+            {/* Inscrições Estaduais Table */}
+            <InscricoesTabel inscricoes={data.estabelecimento?.inscricoes_estaduais} />
 
             {/* Stats Bar */}
             <div className="flex flex-wrap items-center justify-between gap-4 bg-slate-800 rounded-2xl shadow-lg border border-slate-700 px-6 py-4">

@@ -103,25 +103,6 @@ export default function SummaryCard({ data }) {
         <InfoRow icon={<IconMail className="w-5 h-5" />} label="E-mail" value={email} />
       </div>
 
-      {inscricoes.length > 0 && (
-        <div>
-          <p className="text-xs uppercase tracking-wide text-slate-400 mb-2">Inscrições Estaduais</p>
-          <div className="flex flex-wrap gap-2">
-            {inscricoes.map((ie, idx) => (
-              <span
-                key={idx}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium border ${
-                  ie.ativo
-                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                    : 'bg-slate-50 text-slate-500 border-slate-200'
-                }`}
-              >
-                {ie.inscricao_estadual} · {ie.estado?.sigla} · {ie.ativo ? 'Ativa' : 'Inativa'}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   )
 }
